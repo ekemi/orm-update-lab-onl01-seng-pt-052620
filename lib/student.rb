@@ -29,10 +29,10 @@ class Student
 
 def save
 
-  if self.id 
+  if self.id
     self.update
   else
-    
+
     sql = "INSERT INTO students(name, grade)
     VALUES(?,?)"
       DB[:conn].execute(sql, self.name,self.grade)
