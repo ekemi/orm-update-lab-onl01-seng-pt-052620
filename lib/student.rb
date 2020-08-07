@@ -59,7 +59,7 @@ def self.find_by_name(name)
     end.first
  end
 
- def upadte
+ def update
 
    sql = "UPDATE students
         SET name = ?, grade =?
