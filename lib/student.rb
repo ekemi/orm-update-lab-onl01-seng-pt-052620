@@ -12,5 +12,13 @@ class Student
     @grade = grade
   end
 
+  def sefl.create_table
+    sql = << -SQL
+        CREATE TABLE IF NOT EXISTS students
+        id INTEGER PRIMARY KEY,
+        
+
+  end
+
 
 end
