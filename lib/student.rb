@@ -44,4 +44,11 @@ def self.create(name, grade)
   new_students = Student.new(name, grade)
   new_students.save
 end
+
+def self.new_from_db(arr)
+  id = arr[0]
+  name = arr[1]
+  grade = arr[2]
+  Student.new(id,name,grade)
+end
 end
