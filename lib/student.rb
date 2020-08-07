@@ -13,12 +13,12 @@ class Student
   end
 
   def sefl.create_table
-    sql = << -SQL
+    sql ="
         CREATE TABLE IF NOT EXISTS students
         id INTEGER PRIMARY KEY,
-        SQL
-
-
+        name TEXT,
+        grade INTEGER"
+    DB[:conn].execute(sql)
   end
 
 
