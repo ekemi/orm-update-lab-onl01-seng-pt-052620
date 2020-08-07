@@ -53,9 +53,11 @@ def self.new_from_db(arr)
 end
 def self.find_by_name(name)
     sql ="SELECT * FROM students
-    WHERE name = ?"
-    result = DB[:conn].execute(sql, self.name)[0]
-    self.new_from_db(result[0],result[1],result[2])
+    WHERE name = ? LIMIT 1"
+    DB[:conn].execute(sql,name).map do |value|
+      
+    self.new_from_db(value)
+  end.first
 
  end
 end
